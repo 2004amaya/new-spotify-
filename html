@@ -2,217 +2,210 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Music App – Introduction Page</title>
+<title>Music Explorer – Introduction</title>
 
 <style>
-/* -------------------  GENERAL PAGE STYLE --------------------- */
+/* ------- GLOBAL PAGE STYLE ------- */
 body{
     margin:0;
     padding:0;
-    background:#111;
-    font-family: "Trebuchet MS", Arial, sans-serif;
+    background:#0b0b0c;
+    font-family: Arial, Helvetica, sans-serif;
     color:white;
-}
-
-/* Optional Background Texture */
-body{
-    background-image:url("background-texture.jpg"); /* replace if needed */
+    background-image:url("texture.jpg"); /* optional */
     background-size:cover;
 }
 
-/* ------------------- HEADER & NAV ---------------------------- */
+/* ------- HEADER ------- */
 header{
-    width:100%;
-    padding:20px;
     text-align:center;
-    background:#000000a0;
-    border-bottom:2px solid #3cff8a;
+    padding:25px 0;
+    background:#111;
+    border-bottom:3px solid #58ff7a;
 }
 
 header img{
-    width:120px;
+    width:110px;
 }
 
+header h1{
+    margin-top:10px;
+    font-size:32px;
+    letter-spacing:2px;
+}
+
+/* ------- NAVIGATION ------- */
 nav{
-    margin-top:15px;
+    margin:20px 0;
 }
 
 nav a{
-    color:white;
-    padding:10px 25px;
     text-decoration:none;
-    background:#444;
-    border-radius:5px;
+    color:white;
+    padding:10px 20px;
     margin:5px;
+    background:#333;
+    border-radius:6px;
     transition:0.3s;
 }
 
 nav a:hover{
-    background:#3cff8a;
+    background:#58ff7a;
     color:black;
 }
 
-/* ------------------- ARTIST SECTION --------------------------- */
-.section-title{
-    font-size:28px;
-    margin-left:20px;
-    margin-top:30px;
+/* ------- ARTIST SECTION ------- */
+#artist-section{
+    margin:30px;
+}
+
+.artist-bubbles{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.artist-bubble{
+    width:90px;
+    height:90px;
+    background:#63ffa3;
+    color:black;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    margin:10px;
+    transition:0.25s;
+}
+
+.artist-bubble:hover{
+    background:#98ffd2;
+    transform:scale(1.15);
 }
 
 .artist-bio-box{
-    width:330px;
-    padding:20px;
-    margin:20px;
     float:right;
-    background:#ffcfdb;
-    border-radius:5px;
-    color:#000;
-    font-weight:bold;
+    width:300px;
+    background:#ffdee8;
+    padding:20px;
+    border-radius:8px;
+    margin:10px;
+    color:black;
 }
 
 .artist-bio-box img{
     width:100%;
-    border-radius:5px;
+    border-radius:6px;
 }
 
-.artist-circle-area{
-    margin:20px;
-}
-
-.artist-circle{
-    display:inline-block;
-    width:90px;
-    height:90px;
-    background:#66ffa6;
-    color:black;
-    border-radius:50%;
-    text-align:center;
-    line-height:90px;
-    font-weight:bold;
-    margin:10px;
-    transition:0.3s;
-}
-
-.artist-circle:hover{
-    background:#89ffcc;
-    transform:scale(1.15);
-}
-
-/* ------------------- NEW MUSIC SECTION ------------------------ */
-.new-music{
+/* ------- NEW MUSIC ------- */
+#new-music{
+    padding:25px;
     clear:both;
-    padding:25px;
 }
 
-.music-box{
+.music-item{
+    width:130px;
+    height:130px;
+    border-radius:25px;
+    display:inline-block;
+    background:white;
+    margin:10px;
+    transition:0.3s;
+}
+
+.music-item:hover{
+    background:#58ff7a;
+}
+
+/* ------- EXPLORE MORE ------- */
+#explore{
+    padding:30px;
+}
+
+.section-title{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.playlist-item{
     width:120px;
     height:120px;
-    background:#ffffff;
+    border-radius:35px;
+    background:#fafafa;
     display:inline-block;
     margin:10px;
-    border-radius:30px;
-    transition:0.3s;
-}
-
-.music-box:hover{
-    background:#3cff8a;
-}
-
-/* ------------------- EXPLORE MORE ----------------------------- */
-.explore{
-    padding:25px;
-}
-
-.playlist{
-    width:120px;
-    height:120px;
-    background:#eee;
-    display:inline-block;
-    border-radius:35px;
-    color:#b09a00;
+    color:#b88400;
     font-weight:bold;
-    line-height:120px;
     text-align:center;
-    margin:12px;
+    line-height:120px;
     transition:0.3s;
 }
 
-.playlist:hover{
-    background:#ffe15f;
+.playlist-item:hover{
+    background:#ffe57a;
 }
 
-.artist-pic-burst{
-    display:inline-block;
+.artist-star{
     width:110px;
     height:110px;
+    display:inline-block;
     border-radius:50%;
     background:white;
     color:black;
-    font-weight:bold;
     text-align:center;
     line-height:110px;
     margin:10px;
+    font-weight:bold;
 }
 
-/* ------------------- BROWSE GRID ------------------------------ */
-.browse-all{
-    font-size:26px;
+/* ------- BROWSE ALL GRID ------- */
+#browse-all{
     text-align:center;
-    margin-top:20px;
-}
-
-.grid{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    margin-top:15px;
+    padding:30px 0;
 }
 
 .grid-box{
-    width:130px;
+    display:inline-block;
+    width:150px;
     height:80px;
-    border:2px solid #adff75;
+    border:2px solid #97ff6a;
     margin:10px;
-    text-align:center;
     line-height:80px;
     font-size:18px;
     transition:0.3s;
 }
 
 .grid-box:hover{
-    background:#adff75;
+    background:#97ff6a;
     color:black;
 }
 
-
-/* ------------------- FOOTER ---------------------------------- */
+/* ------- FOOTER ------- */
 footer{
-    margin-top:40px;
-    background:#000000c8;
+    background:#000;
     padding:20px;
-    color:#ccc;
-    font-size:14px;
     text-align:center;
+    color:#bbb;
+    margin-top:40px;
 }
 
 footer a{
-    color:#3cff8a;
-    margin:0 10px;
     text-decoration:none;
+    color:#58ff7a;
+    margin:0 15px;
 }
-
 footer a:hover{
     text-decoration:underline;
 }
 </style>
 
 </head>
-
 <body>
 
 <header>
-    <img src="your-logo.jpg" alt="Logo">
-    <h1>Welcome to My Music App</h1>
+    <img src="logo.jpg" alt="My Logo">
+    <h1>Music Explorer</h1>
 
     <nav>
         <a href="#">ALL</a>
@@ -222,48 +215,52 @@ footer a:hover{
     </nav>
 </header>
 
-<h2 class="section-title">Featured Artist</h2>
+<!-- ARTIST SECTION -->
+<div id="artist-section">
 
-<div class="artist-circle-area">
-    <div class="artist-circle">ARTIST</div>
-    <div class="artist-circle">ARTIST</div>
-    <div class="artist-circle">ARTIST</div>
-    <div class="artist-circle">ARTIST</div>
-    <div class="artist-circle">ARTIST</div>
+    <div class="artist-bio-box">
+        <img src="artist.jpg" alt="Artist">
+        <h3>Artist Name</h3>
+        <p>Short biography about the artist, describing style, achievements,
+           and background. This section introduces the featured musician.</p>
+    </div>
+
+    <div class="artist-bubbles">
+        <div class="artist-bubble">ARTIST</div>
+        <div class="artist-bubble">ARTIST</div>
+        <div class="artist-bubble">ARTIST</div>
+        <div class="artist-bubble">ARTIST</div>
+        <div class="artist-bubble">ARTIST</div>
+        <div class="artist-bubble">ARTIST</div>
+    </div>
 </div>
 
-<div class="artist-bio-box">
-    <img src="artist-photo.jpg" alt="Artist">
-    <h3>Artist Name & Biography</h3>
-    <p>
-        This is a short bio about the artist. Include information about music style, history,
-        inspirations, and achievements.
-    </p>
-</div>
-
-<div class="new-music">
+<!-- NEW MUSIC -->
+<div id="new-music">
     <h2 class="section-title">New Music</h2>
-    <div class="music-box"></div>
-    <div class="music-box"></div>
-    <div class="music-box"></div>
+    <div class="music-item"></div>
+    <div class="music-item"></div>
+    <div class="music-item"></div>
 </div>
 
-<div class="explore">
+<!-- EXPLORE MORE -->
+<div id="explore">
     <h2 class="section-title">Explore More</h2>
 
-    <div class="artist-pic-burst">Artist</div>
-    <div class="playlist">PLAYLIST</div>
-    <div class="playlist">PLAYLIST</div>
-    <div class="artist-pic-burst">Artist</div><br>
+    <div class="artist-star">Artist</div>
+    <div class="playlist-item">PLAYLIST</div>
+    <div class="playlist-item">PLAYLIST</div>
+    <div class="artist-star">Artist</div><br>
 
-    <div class="playlist">PLAYLIST</div>
-    <div class="playlist">PLAYLIST</div>
-    <div class="artist-pic-burst">Artist</div>
+    <div class="playlist-item">PLAYLIST</div>
+    <div class="playlist-item">PLAYLIST</div>
+    <div class="artist-star">Artist</div>
 </div>
 
-<h2 class="browse-all">BROWSE ALL</h2>
+<!-- BROWSE ALL -->
+<div id="browse-all">
+    <h2 class="section-title">Browse All</h2>
 
-<div class="grid">
     <div class="grid-box">FOR YOU</div>
     <div class="grid-box">NEW RELEASES</div>
     <div class="grid-box">POP</div>
@@ -277,11 +274,11 @@ footer a:hover{
 
 <footer>
     <p>© All Rights Reserved 2012</p>
-
     <a href="#">Contact</a>
-    <a href="#">Privacy</a>
-    <a href="#">Help</a>
+    <a href="#">About</a>
+    <a href="#">Support</a>
 </footer>
 
 </body>
 </html>
+
