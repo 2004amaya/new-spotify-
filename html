@@ -2,283 +2,179 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Music Explorer – Introduction</title>
-
+<title>Artist UI Mockup</title>
 <style>
-/* ------- GLOBAL PAGE STYLE ------- */
-body{
-    margin:0;
-    padding:0;
-    background:#0b0b0c;
-    font-family: Arial, Helvetica, sans-serif;
-    color:white;
-    background-image:url("texture.jpg"); /* optional */
-    background-size:cover;
+
+body {
+    margin: 0;
+    background: #000;
+    font-family: "Georgia", serif;
+    color: white;
 }
 
-/* ------- HEADER ------- */
-header{
-    text-align:center;
-    padding:25px 0;
-    background:#111;
-    border-bottom:3px solid #58ff7a;
+/* TOP MENU */
+.top-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
 }
 
-header img{
-    width:110px;
+.top-menu button {
+    background: #3a3a3a;
+    padding: 10px 20px;
+    border: none;
+    margin: 0 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
-header h1{
-    margin-top:10px;
-    font-size:32px;
-    letter-spacing:2px;
+.top-menu button.active {
+    background: #70ff6f;
+    color: #000;
 }
 
-/* ------- NAVIGATION ------- */
-nav{
-    margin:20px 0;
+/* LEFT ARTIST BUBBLES */
+.artist-tree {
+    position: absolute;
+    left: 20px;
+    top: 80px;
 }
 
-nav a{
-    text-decoration:none;
-    color:white;
-    padding:10px 20px;
-    margin:5px;
-    background:#333;
-    border-radius:6px;
-    transition:0.3s;
+.bubble {
+    width: 90px;
+    height: 90px;
+    background: #8bd48b;
+    border-radius: 50%;
+    border: 3px solid #3f5f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    font-weight: bold;
 }
 
-nav a:hover{
-    background:#58ff7a;
-    color:black;
+.bubble.small {
+    width: 70px;
+    height: 70px;
+    background: #bfbfbf;
+    border: 2px solid #5f5f5f;
 }
 
-/* ------- ARTIST SECTION ------- */
-#artist-section{
-    margin:30px;
+/* RIGHT POSTER AREA */
+.poster {
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    width: 45%;
+    background: #f4c8c8;
+    padding: 20px;
 }
 
-.artist-bubbles{
-    display:flex;
-    flex-wrap:wrap;
+.poster-shape {
+    width: 100%;
+    height: 380px;
+    background: linear-gradient(90deg, #f9dada, #dca0a0);
+    clip-path: polygon(30% 0%, 60% 20%, 80% 40%, 100% 70%, 70% 100%, 40% 70%, 10% 50%);
 }
 
-.artist-bubble{
-    width:90px;
-    height:90px;
-    background:#63ffa3;
-    color:black;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-    margin:10px;
-    transition:0.25s;
+.poster h2 {
+    margin-top: 15px;
+    font-size: 32px;
+    color: white;
 }
 
-.artist-bubble:hover{
-    background:#98ffd2;
-    transform:scale(1.15);
+/* NEW MUSIC BOXES */
+.new-music-title {
+    position: absolute;
+    top: 500px;
+    left: 20px;
+    font-size: 32px;
 }
 
-.artist-bio-box{
-    float:right;
-    width:300px;
-    background:#ffdee8;
-    padding:20px;
-    border-radius:8px;
-    margin:10px;
-    color:black;
+.music-grid {
+    position: absolute;
+    top: 550px;
+    left: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-gap: 15px;
 }
 
-.artist-bio-box img{
-    width:100%;
-    border-radius:6px;
+.music-tile {
+    width: 80px;
+    height: 80px;
+    background: #fafafa;
+    border-radius: 30%;
 }
 
-/* ------- NEW MUSIC ------- */
-#new-music{
-    padding:25px;
-    clear:both;
+/* BOTTOM NAV */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: #222;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.music-item{
-    width:130px;
-    height:130px;
-    border-radius:25px;
-    display:inline-block;
-    background:white;
-    margin:10px;
-    transition:0.3s;
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    background: #c7c7c7;
+    border-radius: 15%;
 }
 
-.music-item:hover{
-    background:#58ff7a;
-}
-
-/* ------- EXPLORE MORE ------- */
-#explore{
-    padding:30px;
-}
-
-.section-title{
-    font-size:26px;
-    margin-bottom:10px;
-}
-
-.playlist-item{
-    width:120px;
-    height:120px;
-    border-radius:35px;
-    background:#fafafa;
-    display:inline-block;
-    margin:10px;
-    color:#b88400;
-    font-weight:bold;
-    text-align:center;
-    line-height:120px;
-    transition:0.3s;
-}
-
-.playlist-item:hover{
-    background:#ffe57a;
-}
-
-.artist-star{
-    width:110px;
-    height:110px;
-    display:inline-block;
-    border-radius:50%;
-    background:white;
-    color:black;
-    text-align:center;
-    line-height:110px;
-    margin:10px;
-    font-weight:bold;
-}
-
-/* ------- BROWSE ALL GRID ------- */
-#browse-all{
-    text-align:center;
-    padding:30px 0;
-}
-
-.grid-box{
-    display:inline-block;
-    width:150px;
-    height:80px;
-    border:2px solid #97ff6a;
-    margin:10px;
-    line-height:80px;
-    font-size:18px;
-    transition:0.3s;
-}
-
-.grid-box:hover{
-    background:#97ff6a;
-    color:black;
-}
-
-/* ------- FOOTER ------- */
-footer{
-    background:#000;
-    padding:20px;
-    text-align:center;
-    color:#bbb;
-    margin-top:40px;
-}
-
-footer a{
-    text-decoration:none;
-    color:#58ff7a;
-    margin:0 15px;
-}
-footer a:hover{
-    text-decoration:underline;
-}
 </style>
-
 </head>
+
 <body>
 
-<header>
-    <img src="logo.jpg" alt="My Logo">
-    <h1>Music Explorer</h1>
+<!-- TOP MENU -->
+<div class="top-menu">
+    <button class="active">ALL</button>
+    <button>MUSIC</button>
+    <button>PODCAST</button>
+    <button>MORE</button>
+</div>
 
-    <nav>
-        <a href="#">ALL</a>
-        <a href="#">MUSIC</a>
-        <a href="#">PODCAST</a>
-        <a href="#">MORE</a>
-    </nav>
-</header>
+<!-- ARTIST BUBBLE LIST -->
+<div class="artist-tree">
+    <div class="bubble">ARTIST</div>
+    <div class="bubble small">ARTIST</div>
+    <div class="bubble small">ARTIST</div>
+    <div class="bubble small">ARTIST</div>
+    <div class="bubble small">ARTIST</div>
+</div>
 
-<!-- ARTIST SECTION -->
-<div id="artist-section">
-
-    <div class="artist-bio-box">
-        <img src="artist.jpg" alt="Artist">
-        <h3>Artist Name</h3>
-        <p>Short biography about the artist, describing style, achievements,
-           and background. This section introduces the featured musician.</p>
-    </div>
-
-    <div class="artist-bubbles">
-        <div class="artist-bubble">ARTIST</div>
-        <div class="artist-bubble">ARTIST</div>
-        <div class="artist-bubble">ARTIST</div>
-        <div class="artist-bubble">ARTIST</div>
-        <div class="artist-bubble">ARTIST</div>
-        <div class="artist-bubble">ARTIST</div>
-    </div>
+<!-- POSTER AREA -->
+<div class="poster">
+    <div class="poster-shape"></div>
+    <h2>ARTIST<br>NAME AND<br>BIOGRAPHY</h2>
 </div>
 
 <!-- NEW MUSIC -->
-<div id="new-music">
-    <h2 class="section-title">New Music</h2>
-    <div class="music-item"></div>
-    <div class="music-item"></div>
-    <div class="music-item"></div>
+<div class="new-music-title">NEW MUSIC</div>
+
+<div class="music-grid">
+    <div class="music-tile"></div>
+    <div class="music-tile"></div>
+    <div class="music-tile"></div>
 </div>
 
-<!-- EXPLORE MORE -->
-<div id="explore">
-    <h2 class="section-title">Explore More</h2>
-
-    <div class="artist-star">Artist</div>
-    <div class="playlist-item">PLAYLIST</div>
-    <div class="playlist-item">PLAYLIST</div>
-    <div class="artist-star">Artist</div><br>
-
-    <div class="playlist-item">PLAYLIST</div>
-    <div class="playlist-item">PLAYLIST</div>
-    <div class="artist-star">Artist</div>
+<!-- BOTTOM NAVIGATION -->
+<div class="bottom-nav">
+    <div class="nav-icon"></div>
+    <div class="nav-icon"></div>
+    <div class="nav-icon"></div>
+    <div class="nav-icon"></div>
 </div>
-
-<!-- BROWSE ALL -->
-<div id="browse-all">
-    <h2 class="section-title">Browse All</h2>
-
-    <div class="grid-box">FOR YOU</div>
-    <div class="grid-box">NEW RELEASES</div>
-    <div class="grid-box">POP</div>
-    <div class="grid-box">HIP-HOP</div>
-    <div class="grid-box">LATIN</div>
-    <div class="grid-box">DANCE</div>
-    <div class="grid-box">STUDENTS</div>
-    <div class="grid-box">JAZZ</div>
-    <div class="grid-box">HOLIDAYS</div>
-</div>
-
-<footer>
-    <p>© All Rights Reserved 2012</p>
-    <a href="#">Contact</a>
-    <a href="#">About</a>
-    <a href="#">Support</a>
-</footer>
 
 </body>
 </html>
+
 
