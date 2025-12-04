@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<!-- NAVIGATION -->
 <header>
     <nav class="navbar">
         <ul>
@@ -19,44 +20,49 @@
     </nav>
 </header>
 
+<!-- MAIN CONTENT -->
 <div class="container">
 
-    <!-- ROTATING ARTIST WHEEL -->
-    <div id="wheel" class="artist-menu">
-        <!-- Circles created dynamically with JS -->
+    <!-- ARTIST CIRCLE MENU -->
+    <div class="artist-menu">
+        <div class="circle main">ARTIST</div>
+
+        <div class="circle sub c1">ARTIST</div>
+        <div class="circle sub c2">ARTIST</div>
+        <div class="circle sub c3">ARTIST</div>
+        <div class="circle sub c4">ARTIST</div>
+        <div class="circle sub c5">ARTIST</div>
     </div>
 
-    <!-- ARTIST INFO PANEL -->
+    <!-- RIGHT ARTIST PANEL -->
     <div class="artist-panel">
-        <img id="artist-img" class="panel-art" src="assets/artist1.jpg">
-        <h2 id="artist-name">Artist Name</h2>
-        <p id="artist-bio">Artist biography will appear here.</p>
-
-        <div class="player">
-            <iframe id="artist-player" width="100%" height="200" 
-                src="" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-            </iframe>
-        </div>
+        <div class="panel-art"></div>
+        <h2>ARTIST NAME AND BIOGRAPHY</h2>
+        <p>
+            This is where the biography text will go.  
+            You can replace this with real artist information.
+        </p>
     </div>
-
 </div>
 
+<!-- NEW MUSIC SECTION -->
 <section class="new-music">
     <h2>NEW MUSIC</h2>
+
     <div class="music-grid">
-        <div class="music-item"><img src="assets/track1.jpg"></div>
-        <div class="music-item"><img src="assets/track2.jpg"></div>
-        <div class="music-item"><img src="assets/track3.jpg"></div>
-        <div class="music-item"><img src="assets/track4.jpg"></div>
+        <div class="music-item"></div>
+        <div class="music-item"></div>
+        <div class="music-item"></div>
+        <div class="music-item"></div>
     </div>
 </section>
 
+<!-- FOOTER ICONS -->
 <footer class="footer">
-    <div class="icon"></div>
-    <div class="icon"></div>
-    <div class="icon"></div>
-    <div class="icon"></div>
+    <div class="icon home"></div>
+    <div class="icon search"></div>
+    <div class="icon center"></div>
+    <div class="icon library"></div>
 </footer>
 
 <script src="script.js"></script>
