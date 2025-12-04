@@ -70,3 +70,4 @@ document.addEventListener("mousemove", e => {
     // rotate children in opposite direction to stay upright
     Array.from(wheel.children).forEach(child => {
         child.style.transform = `rotate(${-rotation}deg)`;
+    });
