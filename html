@@ -1,141 +1,71 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artist UI Mockup</title>
-    <style>
-        /* General body settings */
-        body {
-            margin: 0;
-            background: #000;
-            font-family: 'Arial', sans-serif;
-            color: white;
-        }
-
-        /* Header Section */
-        header {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-        }
-
-        header h1 {
-            font-size: 48px;
-            color: #70ff6f;
-            margin: 0;
-        }
-
-        header p {
-            font-size: 18px;
-            color: #f4f4f4;
-        }
-
-        /* Logo */
-        .logo {
-            width: 150px;
-            margin: 20px auto;
-        }
-
-        /* Introduction Section */
-        .intro {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .intro h2 {
-            font-size: 32px;
-            color: #f4c8c8;
-        }
-
-        .intro p {
-            font-size: 20px;
-            color: #bbb;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Short Bio */
-        .bio {
-            text-align: center;
-            padding: 40px 20px;
-            background: #222;
-        }
-
-        .bio h3 {
-            font-size: 28px;
-            color: #70ff6f;
-            margin-bottom: 10px;
-        }
-
-        .bio p {
-            font-size: 18px;
-            color: #bbb;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Picture Section */
-        .picture-section {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .picture-section img {
-            width: 80%;
-            max-width: 600px;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        /* Footer Section */
-        footer {
-            background: #333;
-            text-align: center;
-            padding: 20px;
-            color: #f4f4f4;
-        }
-
-        footer p {
-            font-size: 16px;
-        }
-    </style>
+    <title>Music Artist App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- HEADER SECTION -->
+<!-- NAVIGATION -->
 <header>
-    <img src="logo.jpg" alt="Logo" class="logo">
-    <h1>Artist UI Mockup</h1>
-    <p>Your go-to platform for discovering and learning about artists.</p>
+    <nav class="navbar">
+        <ul>
+            <li class="active">ALL</li>
+            <li>MUSIC</li>
+            <li>PODCAST</li>
+            <li>MORE</li>
+        </ul>
+    </nav>
 </header>
 
-<!-- INTRODUCTION SECTION -->
-<div class="intro">
-    <h2>Welcome to the Artist UI Mockup</h2>
-    <p>
-        This is a simple web page designed to display an artist's profile, including a biography, a collection of their work, and general information about them. It is meant to be a clean and straightforward representation of an artist’s online presence.
-    </p>
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- ARTIST CIRCLE MENU -->
+    <div class="artist-menu">
+        <div class="circle main">ARTIST</div>
+
+        <div class="circle sub c1">ARTIST</div>
+        <div class="circle sub c2">ARTIST</div>
+        <div class="circle sub c3">ARTIST</div>
+        <div class="circle sub c4">ARTIST</div>
+        <div class="circle sub c5">ARTIST</div>
+    </div>
+
+    <!-- RIGHT ARTIST PANEL -->
+    <div class="artist-panel">
+        <div class="panel-art"></div>
+        <h2>ARTIST NAME AND BIOGRAPHY</h2>
+        <p>
+            This is where the biography text will go.  
+            You can replace this with real artist information.
+        </p>
+    </div>
 </div>
 
-<!-- SHORT BIO SECTION -->
-<div class="bio">
-    <h3>Short Bio</h3>
-    <p>
-        This project was created as a basic example of a website that could be used by artists to display their work and personal information. It includes sections for a bio, artist's name, artwork gallery, and other essential details that would be important for any artist’s online presence.
-    </p>
-</div>
+<!-- NEW MUSIC SECTION -->
+<section class="new-music">
+    <h2>NEW MUSIC</h2>
 
-<!-- PICTURE SECTION -->
-<div class="picture-section">
-    <img src="your-image.jpg" alt="Artist Artwork">
-</div>
+    <div class="music-grid">
+        <div class="music-item"></div>
+        <div class="music-item"></div>
+        <div class="music-item"></div>
+        <div class="music-item"></div>
+    </div>
+</section>
 
-<!-- FOOTER SECTION -->
-<footer>
-    <p>&copy; 2025 Artist UI Mockup. All rights reserved.</p>
+<!-- FOOTER ICONS -->
+<footer class="footer">
+    <div class="icon home"></div>
+    <div class="icon search"></div>
+    <div class="icon center"></div>
+    <div class="icon library"></div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
